@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 // GLOBAL
 typedef char NAME[100];
@@ -19,6 +20,26 @@ typedef struct {
 
 PERSON *list = NULL;
 int size = 0;
+
+
+
+/*================
+ *    FUNCTIONS
+ *================*/
+
+// This function indicates if the get argument is number or not
+bool isNumber( char number[] ) {
+
+  int stringSize = strlen( number );
+
+  for ( int i=0; i<stringSize; i++ ) {
+
+    if ( !(number[i] >= 48 && number[i] <= 57) ) {
+      return false;
+    }
+  }
+  return true;
+}
 
 
 // Create and Add Person to the List
@@ -89,40 +110,41 @@ int newPerson() {
 };
 
 /*( Solve another time )
-// Show personal data of each person
-void showPersonalData( int id ) {
-
-  char comeback;
-
-  PERSON temporalPerson = list[ id ];
-
-  system( "cls" );
-  printf( "Information of person with ID [%i]\n\n", id );
-  printf( "Name : %s\n\n", temporalPerson.name );
-  printf( "Lastname : %s\n\n", temporalPerson.lastname );
-  printf( "Email : %s\n\n", temporalPerson.email );
-  printf( "Age : %s", temporalPerson.age );
-
-  printf( "Name : %s\n\nLastname : %s\n\nEmail : %s\n\nAge : %s\n\n", temporalPerson.name, temporalPerson.lastname, temporalPerson.email, temporalPerson.age );
-
-  printf( "Back to List [y/n] :" );
-  scanf( "%c", &comeback );
-
-  comeback = toupper( comeback );
-
-  if ( comeback == 'Y' ) {
-	printList();
-  }
-}
 */
+// Show personal data of each person
+// void showPersonalData( int id ) {
+
+  // char comeback;
+
+  // PERSON temporalPerson = list[ id ];
+
+  // system( "cls" );
+  // printf( "Information of person with ID [%i]\n\n", id );
+  // printf( "Name : %s\n\n", temporalPerson.name );
+  // printf( "Lastname : %s\n\n", temporalPerson.lastname );
+  // printf( "Email : %s\n\n", temporalPerson.email );
+  // printf( "Age : %s", temporalPerson.age );
+
+  // printf( "Name : %s\n\nLastname : %s\n\nEmail : %s\n\nAge : %s\n\n", temporalPerson.name, temporalPerson.lastname, temporalPerson.email, temporalPerson.age );
+
+  // printf( "Back to List [y/n] :" );
+  // scanf( "%c", &comeback );
+
+  // comeback = toupper( comeback );
+
+  // if ( comeback == 'Y' ) {
+    // goto list;
+  // }
+// }
 
 
 // Function that show data of the persons
 void printList() {
 
-  char watch;
   int id;
-  int goOn;
+  char watch;
+  char idString[20];
+  bool goOn;
 
   printf( "\n\nLISTA DE PERSONAS [%i]\n\n\n", size );
   printf("\n[id] Nombre\t\t  Apellido\t\t  Email\t\t\t  Edad\t\t\n");
@@ -141,20 +163,20 @@ void printList() {
   if ( watch == 'Y' ) {
     do{
       printf( "\n\nInput ID of person : " );
-      // scanf( "%d", &id );
+      scanf( "%s", idString );
 
-      // printf( "%i", id );
+      if ( isNumber( idString ) ) {
+        id = atoi( idString );
 
-      if ( scanf( "%d", &id ) ) {
-		if ( (id > size - 1) || (id < 0) ) {
+		if ( (id > size) || (id < 0) ) {
 			printf( "Invalid ID!\n" );
-			goOn = 0;
+			goOn = true;
 		  } else {
 			showPersonalData( id );
-			goOn = 1;
+			goOn = false;
 		  }
 	  }
-    }while( goOn != 1 );
+    }while( goOn );
   }
 
   system( "cls" );
@@ -182,6 +204,7 @@ int main( int argc, char *argv[] ) {
         system("cls");
 
 		if ( size != 0 ) {
+          list:
           printList();
         }else{
 		  printf("No hay elementos");
