@@ -3,7 +3,13 @@
 Exercises about dynamic memory to understand how work :D
 
 - In this branch the projects handle the windows command "cls"
+- It can be compiled and run in "cmd", or at least i do it in "cmd"
 
+Use the command to compile :
+> gcc -o file.out file.c
+
+Use the command to run :
+> file.out
 
 
 ## Folder "dynamic-memory"
