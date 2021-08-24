@@ -103,7 +103,7 @@ void addNewNode() {
     }
   } while( goOn );
 
-  system( "cls" );
+  system( "clear" );
   current = start;
 }
 
@@ -111,7 +111,7 @@ void addNewNode() {
 // Show list with all elements
 int showList() {
 
-  system( "cls" );
+  system( "clear" );
   printf( "LISTA DE ELEMENTOS\n\n" );
 
   int i = 0;
@@ -132,7 +132,7 @@ int main() {
   char options[] = "\n\nOPCIONES\n [1] Crear Nodo\n [2] Listar nodos\n [3] Salir\n";
   int option;
 
-   system( "cls" );
+   system( "clear" );
 
   // Display the options menu
   do{
@@ -143,12 +143,12 @@ int main() {
     switch( option ) {
 
       case 1:
-        system("cls");
+        system("clear");
         addNewNode();
       break;
 
       case 2:
-        system("cls");
+        system("clear");
 
         if ( size == 0 ) {
           printf("No hay elementos");
@@ -162,7 +162,7 @@ int main() {
       break;
 
       default:
-        system("cls");
+        system("clear");
         printf( "Opcion invalida!" );
     }
 

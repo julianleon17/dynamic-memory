@@ -106,7 +106,7 @@ int newPerson() {
     goOn = toupper( goOn );
   } while( goOn != 'N' );
 
-  system("cls");
+  system("clear");
 };
 
 /*( Solve another time )
@@ -118,7 +118,7 @@ int newPerson() {
 
   // PERSON temporalPerson = list[ id ];
 
-  // system( "cls" );
+  // system( "clear" );
   // printf( "Information of person with ID [%i]\n\n", id );
   // printf( "Name : %s\n\n", temporalPerson.name );
   // printf( "Lastname : %s\n\n", temporalPerson.lastname );
@@ -179,7 +179,7 @@ void printList() {
     }while( goOn );
   }
 
-  system( "cls" );
+  system( "clear" );
 */
 }
 
@@ -190,7 +190,7 @@ int main( int argc, char *argv[] ) {
   int option;
   char options[] = "\n\nOPCIONES\n [1] Ver lista de Personas\n [2] Crear Personas\n [3] Salir\n";
 
-  system("cls");
+  system("clear");
 
   // Display the options menu
   do{
@@ -201,7 +201,7 @@ int main( int argc, char *argv[] ) {
     switch( option ){
 
       case 1:
-        system("cls");
+        system("clear");
 
 		if ( size != 0 ) {
           list:
@@ -212,7 +212,7 @@ int main( int argc, char *argv[] ) {
       break;
 
       case 2:
-        system("cls");
+        system("clear");
         newPerson();
       break;
 
@@ -221,7 +221,7 @@ int main( int argc, char *argv[] ) {
       break;
 
       default:
-        system("cls");
+        system("clear");
         printf( "Opcion invalida!" );
     }
 

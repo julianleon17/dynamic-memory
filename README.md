@@ -2,7 +2,7 @@
 
 Exercises about dynamic memory to understand how work :D
 
-- In this branch the projects handle the windows command "cls"
+- In this branch the projects handle the linux command "clear"
 
 
 
