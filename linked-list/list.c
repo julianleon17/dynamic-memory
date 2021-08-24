@@ -87,8 +87,10 @@ void addNewNode() {
       }
     } else {
 
+      int sizeString = strlen(number);
+
       // Capitalizing on the whole word
-      for ( int i=0; number[i] != strlen(number) ; i++ ) {
+      for ( int i=0; i <= sizeString; i++ ) {
         string[i] = toupper( number[i] );
       }
 
