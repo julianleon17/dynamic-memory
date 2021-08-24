@@ -11,7 +11,7 @@ typedef struct Node {
 } NODE;
 
 int size = 0;
-NODE *start = NULL, *current;
+NODE *start = NULL, *current, *next;
 
 
 /*================
@@ -169,6 +169,16 @@ int main() {
     }
 
   } while( option != 3 );
+
+
+  // Freeing up momory in nodes
+  current = start;
+
+  while( current ) {
+    netx = current->netx;
+    free( current );
+    current = next;
+  }
 
   return 0;
 }
