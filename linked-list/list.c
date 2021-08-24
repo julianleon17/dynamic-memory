@@ -57,7 +57,7 @@ void addNewNode() {
   printf( "\t\t ( 'exit' para finalizar )\n\n\n\n" );
 
   do{
-    if ( firstNumber ){
+    if ( firstNumber ) {
 	  printf( "Ingresa el primer numero :" );
 	  firstNumber = false;
     } else {
@@ -87,8 +87,10 @@ void addNewNode() {
       }
     } else {
 
+      int sizeString = strlen(number);
+
       // Capitalizing on the whole word
-      for ( int i=0; number[i] != strlen(number) ; i++ ) {
+      for ( int i=0; i <= sizeString; i++ ) {
         string[i] = toupper( number[i] );
       }
 

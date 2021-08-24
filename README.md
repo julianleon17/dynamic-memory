@@ -4,6 +4,12 @@ Exercises about dynamic memory to understand how work :D
 
 - In this branch the projects handle the linux command "clear"
 
+Use the command to compile :
+> gcc -o file.out file.c
+
+Use the command to run :
+> ./file.out
+
 
 
 ## Folder "dynamic-memory"
